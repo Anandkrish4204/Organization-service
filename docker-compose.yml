@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  organizationservice:
+    image: aangdocker/organization-service:0.0.1-SNAPSHOT
+    ports:
+      - "8081:8081"
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+      - SPRING_APPLICATION_NAME=organization-service
+      - SPRING_CLOUD_CONFIG_URI=http://configservice:8071
+
+networks:
+  default:
+    external: true
+    name: config-server-dockersied_config-server-network
