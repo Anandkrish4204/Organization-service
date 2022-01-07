@@ -1,19 +1,5 @@
-server:
-  port: 8081
-
 spring:
   application:
-    name : organization-service
-  profiles:
-    active : dev
+    name: organization-service
   config:
     import: "optional:configserver:"
-
-eureka:
-  instance:
-    preferIpAddress: true
-  client:
-    registerWithEureka : true
-    fetchRegistry : true
-    serviceUrl:
-      defaultZone: http://eurekaserver:8070/eureka/
